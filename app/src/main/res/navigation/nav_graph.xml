@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/home_fragment">
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.example.homefit.HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_home_to_workout_types"
+            app:destination="@id/workout_types_fragment">
+        </action>
+
+        <action
+            android:id="@+id/action_home_to_nurishment"
+            app:destination="@id/nurishment_fragment">
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/workout_types_fragment"
+        android:name="com.example.homefit.WorkoutTypesFragment"
+        tools:layout="@layout/fragment_workout_types">
+        <action
+            android:id="@+id/action_workout_types_to_workout"
+            app:destination="@id/workout_fragment">
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/workout_fragment"
+        android:name="com.example.homefit.WorkoutFragment"
+        tools:layout="@layout/fragment_workout">
+
+        <argument
+            android:name="workout"
+            app:argType="com.example.homefit.Workout"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nurishment_fragment"
+        android:name="com.example.homefit.NurishmentFragment"
+        tools:layout="@layout/fragment_nurishment">
+
+    </fragment>
+
+</navigation>
